@@ -1,0 +1,274 @@
+/* ================= GENERAL ================= */
+
+/* ================= LOCAL FONTS ================= */
+
+@font-face {
+    font-family: 'LatoCustom';
+    src: url('font/Lato-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LatoCustom';
+    src: url('font/Lato-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+body{
+    margin:0;
+    font-family: 'LatoCustom', sans-serif;
+    font-weight:700; /* Regular */
+    background:#f4f4f4;
+    text-align:center;
+     /* Motif oriental subtil */
+     background-color:#f4f4f4;
+
+    background-image:
+    radial-gradient(circle at 0 0, rgba(144,33,48,0.06) 15%, transparent 16%),
+    radial-gradient(circle at 20px 20px, rgba(144,33,48,0.06) 15%, transparent 16%);
+    background-size:40px 40px;
+    
+}
+
+.top-logo {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.top-logo img {
+    width: 250px;   /* يمكنك تغيير الحجم */
+    height: auto;
+}
+
+/* ================= PRELOADER ================= */
+
+#preloader{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    background:#902130;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    transition:opacity 1s ease, visibility 1s ease;
+}
+
+#preloader img{
+    width:320px;
+    max-width:85%;
+    animation:zoomEffect 2s ease-in-out infinite alternate;
+}
+
+@keyframes zoomEffect{
+    from{transform:scale(1); opacity:0.9;}
+    to{transform:scale(1.08); opacity:1;}
+}
+
+#preloader.hidden{
+    opacity:0;
+    visibility:hidden;
+}
+
+/* ================= HEADER ================= */
+
+header{
+  background:#902130;
+  padding:32px 20px 42px;  /* + espace en bas */
+  color:white;
+}
+
+
+header h1{
+    margin:0;
+    font-size:32px;
+}
+
+header p{
+    margin-top:8px;
+    font-size:18px;
+    color:gold;
+    font-weight:bold;
+}
+
+/* Titre: blanc, bold, sans-serif + espace sous le titre */
+.main-title{
+  margin:0;
+  color:#fff;
+  font-weight:700;
+  letter-spacing:2px;
+  font-size:40px;
+  margin-bottom:14px; /* ✅ espace entre titre et sous-titre */
+}
+
+/* ================= IMAGE CERCLE ================= */
+
+/* Sous-titre + icônes */
+.subtitle{
+  margin:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;               /* espace entre icônes et texte */
+  color:rgb(255, 255, 255);
+  font-size:20px;
+  font-weight:500;
+  margin-bottom:26px;     /* ✅ espace entre sous-titre et photo */
+}
+
+.subtitle-icon{
+  font-size:26px;
+  line-height:1;
+  font-weight:400; /* Regular */
+}
+
+/* ================= IMAGE CERCLE ================= */
+
+.logo-container{
+  margin-top:-35px;  /* un peu moins négatif pour laisser de l'air */
+}
+
+.logo-container img{
+  width:170px;
+  height:170px;
+  border-radius:50%;
+  object-fit:cover;
+  border:6px solid white;
+  box-shadow:0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* ================= TITRES ================= */
+
+.section-title{
+    color:#902130;
+    font-size:24px;
+    margin:40px 0 20px;
+    font-weight:bold;
+}
+
+/* ================= BOUTONS ================= */
+.menu-btn{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    width:80%;
+    max-width:420px;
+    margin:22px auto;
+    padding:16px 24px;
+
+    border-radius:50px;
+    font-size:18px;
+    font-weight:400;
+    color:#fff;
+    cursor:pointer;
+    overflow:hidden;
+
+    /* Fond rouge palace */
+    background:linear-gradient(145deg,#902130,#6f1623);
+
+    /* Bordure dorée royale */
+    border:3px solid transparent;
+    background-clip:padding-box, border-box;
+    background-origin:border-box;
+    background-image:
+        linear-gradient(145deg,#902130,#6f1623),
+        linear-gradient(135deg,
+            #fff8dc 0%,
+            gold 20%,
+            #d4af37 40%,
+            #b8860b 60%,
+            gold 80%,
+            #fff8dc 100%);
+
+    /* Relief palace */
+    box-shadow:
+        inset 0 4px 8px rgba(255,255,255,0.4),
+        inset 0 -6px 10px rgba(0,0,0,0.5),
+        0 10px 20px rgba(0,0,0,0.5);
+
+    transition:all 0.35s ease;
+}
+
+
+
+
+.menu-btn img{
+    width:35px;
+    height:35px;
+    border-radius:6px;
+    object-fit:cover;
+}
+
+.menu-btn .text{
+    flex:1;
+    text-align:left;
+    margin-left:10px;
+}
+
+
+.menu-btn::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background:linear-gradient(
+        120deg,
+        transparent 0%,
+        rgba(255,255,255,0.4) 50%,
+        transparent 100%
+    );
+    transition:0.6s;
+}
+
+.menu-btn:hover::before{
+    left:100%;
+}
+
+
+.menu-btn:hover{
+    transform:translateY(-5px);
+    box-shadow:
+        inset 0 4px 10px rgba(255,255,255,0.5),
+        inset 0 -6px 12px rgba(0,0,0,0.6),
+        0 18px 35px rgba(0,0,0,0.6);
+}
+
+.menu-btn:active{
+    transform:translateY(3px);
+    box-shadow:
+        inset 0 6px 12px rgba(0,0,0,0.7),
+        0 6px 12px rgba(0,0,0,0.4);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:768px){
+    header h1{
+        font-size:26px;
+    }
+
+    .menu-btn{
+        width:90%;
+        font-size:15px;
+    }
+}
+
+@media (max-width:480px){
+    .logo-container img{
+        width:130px;
+        height:130px;
+    }
+
+    .menu-btn{
+        padding:10px;
+        font-size:14px;
+    }
+}

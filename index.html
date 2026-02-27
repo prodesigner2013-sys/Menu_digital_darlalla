@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENU DAR LALLA</title>
+
+    <!-- Google Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= PRELOADER ================= -->
+<div id="preloader">
+    <img src="img/preload.jpg" alt="Chargement Menu">
+</div>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+    <div class="top-logo">
+      <img src="img/logo.png" alt="Dar Lalla Logo">
+    </div>
+
+  <h1 class="main-title">MENU DAR LALLA</h1>
+
+  <p class="subtitle">
+    <span class="material-icons subtitle-icon">restaurant</span>
+    <span class="subtitle-text">Savourez la Tradition, Dégustez l'authenticité</span>
+    <span class="material-icons subtitle-icon">restaurant</span>
+  </p>
+</header>
+
+
+
+<div class="logo-container">
+    <img src="img/profil.jpg" alt="Restaurant">
+</div>
+
+<!-- ================= RESTAURANT ================= -->
+<div class="section-title">- RESTAURATION -</div>
+
+<button class="menu-btn" onclick="openPDF('menufrancais.pdf')">
+    <img src="img/dejeuner.jpeg">
+    <div class="text">Menu en Français</div>
+    <span class="material-icons">restaurant</span>
+</button>
+
+<button class="menu-btn" onclick="openPDF('menuanglais.pdf')">
+    <img src="img/dejeuner.jpeg">
+    <div class="text">Menu in English</div>
+    <span class="material-icons">restaurant</span>
+</button>
+
+<button class="menu-btn" onclick="openPDF('menuespagnol.pdf')">
+     <img src="img/dejeuner.jpeg">
+    <div class="text">Menú en Español</div>
+    <span class="material-icons">restaurant</span>
+</button>
+
+<button class="menu-btn" onclick="openPDF('menuitalie.pdf')">
+    <img src="img/dejeuner.jpeg">
+    <div class="text">Menu Italiano</div>
+    <span class="material-icons">restaurant</span>
+</button>
+
+<!-- ================= PETIT DEJEUNER ================= -->
+<div class="section-title">- NOS PETITS DEJEUNERS -</div>
+
+<button class="menu-btn" onclick="openPDF('nospetitsdéjeuners.pdf')">
+     <img src="img/breakfast.png">
+    <div class="text">Petit Déjeuner Français</div>
+    <span class="material-icons">free_breakfast</span>
+</button>
+
+<button class="menu-btn" onclick="openPDF('Ourbreakfasts.pdf')">
+    <img src="img/breakfast.png">
+    <div class="text">Breakfast English</div>
+    <span class="material-icons">free_breakfast</span>
+</button>
+
+<button class="menu-btn" onclick="openPDF('ftores.pdf')">
+    <img src="img/breakfast.png">
+    <div class="text">Desayuno Español</div>
+    <span class="material-icons">free_breakfast</span>
+</button>
+
+<button class="menu-btn" onclick="openPDF('ftoritaly.pdf')">
+    <img src="img/breakfast.png">
+    <div class="text">Colazione Italiana</div>
+    <span class="material-icons">free_breakfast</span>
+</button>
+
+<!-- JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
