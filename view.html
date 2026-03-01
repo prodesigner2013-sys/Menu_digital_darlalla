@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>عرض الملف</title>
+  <style>
+    html, body { height: 100%; margin: 0; }
+    iframe { width: 100%; height: 100%; border: 0; }
+  </style>
+</head>
+<body>
+  <iframe id="pdfFrame"></iframe>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const file = params.get("file");
+
+    // حماية بسيطة: لا نسمح إلا بملفات pdf داخل نفس المجلد
+    if (!file || !file.toLowerCase().endsWith(".pdf") || file.includes("/") || file.includes("..")) {
+      document.body.innerHTML = "<p style='font-family: sans-serif; padding:16px'>ملف غير صالح.</p>";
+    } else {
+      document.getElementById("pdfFrame").src = "./" + encodeURIComponent(file);
+      document.title = file;
+    }
+  </script>
+</body>
+</html>
