@@ -1,6 +1,6 @@
 // Ouvrir PDF
-function openPDF(file){
-    window.location.href = file;
+function openPDF(url){
+  window.location.href = url;
 }
 // Preloader
 window.addEventListener("load", function(){
@@ -9,3 +9,4 @@ window.addEventListener("load", function(){
     }, 2000);
 
 });
+
