@@ -151,6 +151,10 @@ header p{
 }
 
 /* ================= BOUTONS ================= */
+a{
+    text-decoration: none;
+}
+
 .menu-btn{
     position:relative;
     display:flex;
@@ -271,4 +275,5 @@ header p{
         padding:10px;
         font-size:14px;
     }
+
 }
