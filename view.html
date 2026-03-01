@@ -10,17 +10,19 @@
   </style>
 </head>
 <body>
-  <iframe id="pdfFrame"></iframe>
+  <iframe id="frame" title="PDF Viewer"></iframe>
 
   <script>
-    const params = new URLSearchParams(window.location.search);
+    const params = new URLSearchParams(location.search);
     const file = params.get("file");
 
-    // حماية بسيطة: لا نسمح إلا بملفات pdf داخل نفس المجلد
+    // حماية بسيطة: فقط pdf في نفس المجلد
     if (!file || !file.toLowerCase().endsWith(".pdf") || file.includes("/") || file.includes("..")) {
-      document.body.innerHTML = "<p style='font-family: sans-serif; padding:16px'>ملف غير صالح.</p>";
+      document.body.innerHTML = "<p style='font-family:sans-serif;padding:16px'>ملف غير صالح.</p>";
     } else {
-      document.getElementById("pdfFrame").src = "./" + encodeURIComponent(file);
+      const pdfUrl = `${location.origin}${location.pathname.replace(/\/[^\/]*$/, "/")}${encodeURIComponent(file)}`;
+      const gview = "https://docs.google.com/gview?embedded=1&url=" + encodeURIComponent(pdfUrl);
+      document.getElementById("frame").src = gview;
       document.title = file;
     }
   </script>
